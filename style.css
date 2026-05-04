@@ -6,10 +6,18 @@
 
 body {
     background-color: #000;
-    /* background-color: #e289f4; */
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     color:#fff;
     padding: 2rem;
+}
+
+#background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
 }
 
 .about img {
@@ -24,20 +32,29 @@ body {
     text-align: justify;
 }
 
-footer {
-    position: fixed;
-    bottom: 2rem;
-    & a {
-        color: inherit;
-        text-decoration: underline;
+@media only screen and (max-width: 768px) {
+    .about img {
+        margin-bottom: 2rem;
+    }
+    .about p {
+        font-size: 1.25rem;
+        max-width: 100%;
     }
 }
 
-#background {
+footer {
     position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
+    bottom: 3rem;
+    & a {
+        color: inherit;
+        position: inherit;
+    }
+    & #email {
+        text-decoration: underline;
+        left: 2rem;
+    }
+    & #linkedin {
+        text-decoration: none;
+        right: 2rem;
+    }
 }

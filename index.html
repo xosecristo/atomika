@@ -25,8 +25,10 @@
     e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=e.getElementsByTagName("script")[0];e.parentNode.insertBefore(k,e)}})(document,window.mixpanel||[])
 
     mixpanel.init('cdcf7006288e961e6309ed631bd45bdc', {
-        autocapture: true,
+        autocapture: false,
         record_sessions_percent: 100,
+        track_pageview: true,
+        secure_cookie: true,
     })
 
     </script>
@@ -57,6 +59,15 @@
         <a id="email" href="mailto:hello@designedbyaliens.com">hello@designedbyaliens.com</a>
         <a id="linkedin" href="#">@DesignedByAliens</a>
     </footer>
-
+    <script type="text/javascript">
+        document.getElementById('email').onclick = function() {
+            mixpanel.track('Email clicked', {
+                "source":"footer",
+        })};
+        document.getElementById('linkedin').onclick = function() {
+            mixpanel.track('Linkedin clicked', {
+                "source":"footer",
+        })};
+    </script>
 </body>
 </html>
